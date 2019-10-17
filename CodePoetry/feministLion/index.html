@@ -1,0 +1,96 @@
+<style>
+    h2 {
+      width:800px;
+      white-space: pre;
+    }
+  </style>
+  <script src="jquery-1.11.1.min.js"></script>
+  <script src="markov.js"></script>
+  
+  <script>
+  var txt;
+  
+    
+  var simbaQstart = "Simba: Dad, how is ";
+  
+  var simbaQuestion = [
+    "accesibility adressed in the sabana?", 
+    "access to information guaranteed in our kingdom?",
+    " that female lions deal with male-dominated structures of power?", 
+    " the kingdom adressing ideas of resistance these days?",
+    "movement building encouraged in our kingdom?", 
+    "democratisation of policy making encouraged in the sabana?"
+  ];
+  
+  var mufasaAstart = "Mufasa: Look Simba, everything the light touches, is our kingdom and ";
+  
+  //var mufasaMarkovAnswer = markovAnswerArray;
+  
+  var mufasaAend = " and it is important because we are all connected in the circle of life.";
+    
+    
+  var markovAnswerArray = [];
+  //MarkovGeneratorWord(n-gram size, max # of words)
+  //the lower n-gram size is the more random and aburd the text feels. the higher it is, the more likely it is to just copy unmodified excerpts from one of the texts. I find an an n-gram size of 2-3 to be the sweet spot, but experiment around
+  var accessAnswer = new MarkovGeneratorWord(3,50)
+  $.get("access.txt", function(text) {
+    accessAnswer.feed(text);
+    var tAccess = accessAnswer.generate();
+    markovAnswerArray.push(tAccess);
+  });
+ 
+    
+  var usageAnswer = new MarkovGeneratorWord(3,50)
+  $.get("usage.txt", function(text) {
+    usageAnswer.feed(text);
+    var tUsage = usageAnswer.generate();
+    markovAnswerArray.push(tUsage);
+  });
+    
+  var informationAnswer = new MarkovGeneratorWord(3,50)
+  $.get("information.txt", function(text) {
+    informationAnswer.feed(text);
+    var tInformation = informationAnswer.generate();
+    markovAnswerArray.push(tInformation);
+  });
+ 
+  var resistanceAnswer = new MarkovGeneratorWord(3,50)
+  $.get("resistance.txt", function(text) {
+    resistanceAnswer.feed(text);
+    var tresistance = resistanceAnswer.generate();
+    markovAnswerArray.push(tresistance);
+  });
+
+  var movementAnswer = new MarkovGeneratorWord(3,50)
+  $.get("movement.txt", function(text) {
+    movementAnswer.feed(text);
+    var tmovement = movementAnswer.generate();
+    markovAnswerArray.push(tmovement);
+  });
+
+  var governanceAnswer = new MarkovGeneratorWord(3,50)
+  $.get("governance.txt", function(text) {
+    governanceAnswer.feed(text);
+    var tgovernance = governanceAnswer.generate();
+    markovAnswerArray.push(tgovernance);
+  });
+  
+  function newGenerate(){
+    randNum = Math.floor(Math.random() * (6 - 0)) + 0;
+    console.log(randNum);
+    output = simbaQstart + simbaQuestion[randNum] + "\n" + mufasaAstart + markovAnswerArray[randNum] + mufasaAend;
+    $("h2").text(output);
+    $("h2").after("<br>");
+    $("h2").text(output);
+  }
+
+  
+  //$('h2').text(output);
+  
+  
+  </script>
+  <h2>Feminist Principles of the internet meets the Lion King</h2>
+  <p> Short dialogues between Simba and Mufasa, explaining markov-generated texts of the Feminist Principles of the internet </p>
+
+  <button onclick="newGenerate()">Generate</button>
+  <a href="output.html">output</a>
