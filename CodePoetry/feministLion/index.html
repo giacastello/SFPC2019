@@ -1,7 +1,18 @@
 <style>
+  body {
+    background-color: black;
+    color:aliceblue;
+    font-family: "courier new";
+    text-align: center;
+  }
     h2 {
+      font-size: 15px;
+      display:block;
+      margin: auto;
       width:800px;
-      white-space: pre;
+      word-break: break-word;
+      white-space: pre-wrap;
+      text-align: center;
     }
   </style>
   <script src="jquery-1.11.1.min.js"></script>
@@ -78,9 +89,7 @@
   function newGenerate(){
     randNum = Math.floor(Math.random() * (6 - 0)) + 0;
     console.log(randNum);
-    output = simbaQstart + simbaQuestion[randNum] + "\n" + mufasaAstart + markovAnswerArray[randNum] + mufasaAend;
-    $("h2").text(output);
-    $("h2").after("<br>");
+    output = simbaQstart + simbaQuestion[randNum] + "\n" + "\n" + mufasaAstart + markovAnswerArray[randNum] + mufasaAend;
     $("h2").text(output);
   }
 
@@ -90,7 +99,9 @@
   
   </script>
   <h2>Feminist Principles of the internet meets the Lion King</h2>
+  <br> 
+  <img src="https://media.giphy.com/media/Lxjlm2AUTKO0U/giphy.gif" alt="lion king sunrise">
   <p> Short dialogues between Simba and Mufasa, explaining markov-generated texts of the Feminist Principles of the internet </p>
-
+  <br>
   <button onclick="newGenerate()">Generate</button>
-  <a href="output.html">output</a>
+  <a href="output.html"></a>
