@@ -1,0 +1,9 @@
+ Random Reading List
+ 1. From Electronic Music: Systems, Techniques and Controls by Allen Strange - http://euwpdf.landssoapseries.com/electronic-music-systems-allen-strange-72845626.pdf
+ 2. Don Buchla interview transcript from http:// www.vasulka.org -  http://www.vasulka.org/archive/RightsIntrvwInstitMediaPolicies/IntrvwInstitKaldron/61/BuchlaTranscription.pdf
+ 3. From: Musical Applications of Microprocessors by Hal Chamberlin - http://sites.music.columbia.edu/cmc/courses/g6610/fall2016/week8/Musical_Applications_of_Microprocessors-Charmberlin.pdf
+ 4. Wiard Model 1210 Noise Ring manual - https://grayscale.info/manuals/Grayscale_Permutation_manual.pdf
+ 5. Grant Richter’s notes on the Noise Ring Entrop Expander - 
+ 6. Doepfer A-149 manual - http://www.doepfer.de/a100_man/A1491_man.pdf
+
+
